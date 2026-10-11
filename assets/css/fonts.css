@@ -1,0 +1,14 @@
+/* Web fonts (all SIL Open Font License 1.1; see assets/fonts/LICENSES.txt and the license files next to each font).
+   Chinese files are subsets of the characters used on this site; regenerate after text changes.
+   Every stack ends in system fonts, so text stays readable if a font file fails to load. */
+@font-face{font-family:"Inter V";src:url("../fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Bricolage V";src:url("../fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans SC S";src:url("../fonts/noto-sans-sc-regular.woff2") format("woff2");font-weight:300 500;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans SC S";src:url("../fonts/noto-sans-sc-bold.woff2") format("woff2");font-weight:600 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans SC Black S";src:url("../fonts/noto-sans-sc-black.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+:root{
+  --display:"Bricolage V","Noto Sans SC Black S","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,sans-serif;
+  --sans:"Inter V","Noto Sans SC S","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --serif:var(--display);
+  --mono:"Inter V","Noto Sans SC S","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}

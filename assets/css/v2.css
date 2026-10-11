@@ -201,3 +201,77 @@ html[data-track="games"] span.only-games{display:inline}
 .vplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-62%);width:64px;height:64px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;font-size:1.4rem;cursor:pointer;display:grid;place-items:center;transition:background .2s,transform .2s}
 .vplay:hover,.vplay:focus-visible{background:var(--accent);transform:translate(-50%,-62%) scale(1.06)}
 .vplay[hidden]{display:none}
+
+/* touch devices: no simulated hover; focus feedback stays */
+@media(hover:none){
+ .pcard:hover{transform:none;border-color:var(--rule);box-shadow:none}
+ .pcard:hover::before{transform:scaleY(0)}
+ .pcard:hover .cover img.bg{transform:none}
+ .pcard:hover h3{color:inherit}.pcard:hover .more-link{transform:none;color:inherit}
+ .collage figure:hover{transform:none}
+ .btn:hover{transform:none}
+}
+.pcard:focus-visible::before{transform:scaleY(1)}
+
+.type-switch{position:fixed;right:10px;bottom:10px;z-index:90;display:flex;gap:.3rem;background:var(--ink);padding:.3rem;border-radius:999px;font:600 .72rem var(--sans)}.type-switch a{color:#fff;text-decoration:none;padding:.35rem .65rem;border-radius:999px}.type-switch a:hover{background:var(--accent)}
+
+/* round-8: four-step playtest chain (For the Gram) */
+.chain-panel.c4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.chain-panel.c4 .jx-row::after{display:none}
+.chain-panel.c4 .jx-row.nxt{border-left-color:var(--muted)}.chain-panel.c4 .jx-row.nxt b{color:var(--muted)}
+.chain-panel.c4>h4,.chain-panel.c4>.jx-insight,.chain-panel.c4>.src,.chain-panel.c4>.mine,.chain-panel.c4>.fig{grid-column:1/-1}
+.chain-panel.c4 ul{margin:.2rem 0 0;padding-left:1.1rem;font-size:.95rem}.chain-panel.c4 li{margin:.2rem 0}
+.chain-panel.c4 .jx-row p{margin:0 0 .4rem}
+.src{margin:.2rem 0 .3rem}
+.srcchip{display:inline-block;font:700 .66rem var(--mono);letter-spacing:.05em;text-transform:uppercase;padding:.15rem .5rem;border-radius:99px;border:1px solid var(--theme-ink);color:var(--theme-ink);background:var(--paper)}
+.srcchip.ext{background:var(--theme-soft)}.srcchip.ta{border-style:dashed}.srcchip.int{border-color:var(--muted);color:var(--muted)}.srcchip.tm{border-color:var(--muted);color:var(--muted)}
+.mine{font-size:.9rem;margin:.2rem 0;padding:.45rem .7rem;border-radius:8px;background:var(--theme-soft)}.mine b{font:700 .66rem var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--theme-ink)}
+@media(max-width:860px){.chain-panel.c4{grid-template-columns:minmax(0,1fr)}}
+.pc-gram{--c:#C2415C;--cs:#FBE6EA}.pc-ucl{--c:#5B5BA6;--cs:#E9E9F6}
+body[data-theme="ucl"]{--theme:#5B5BA6;--theme-ink:#44448A;--theme-soft:#E9E9F6}
+html[data-track="games"] .projects .pc-gram{order:-2}html[data-track="games"] .projects .pc-ucl{order:-1}
+.projects{grid-auto-flow:row}
+.jx-row p b,.jx-row li b,.jx-row .quote b{display:inline;font:inherit;font-weight:700;letter-spacing:0;text-transform:none;color:inherit;margin:0}
+.fb b,.callout p b{display:inline}
+.funnel{margin:1rem 0 .4rem}
+.frow{display:grid;grid-template-columns:minmax(8rem,14rem) 1fr;gap:.8rem;align-items:center;margin:.35rem 0;font-size:.9rem}
+.frow i{display:block;height:1.6rem;background:var(--theme);border-radius:4px;min-width:2.2rem;position:relative}
+.frow i.lost{background:repeating-linear-gradient(45deg,var(--rule),var(--rule) 4px,var(--paper) 4px,var(--paper) 8px);border:1px solid var(--muted)}
+.frow i b{position:absolute;left:.5rem;top:50%;transform:translateY(-50%);font:700 .8rem var(--mono);color:#fff}
+.frow i.lost b{color:var(--ink);left:calc(100% + .4rem)}
+@media(max-width:560px){.frow{grid-template-columns:1fr;gap:.15rem}}
+ul.tick{padding-left:1.1rem}ul.tick li{margin:.5rem 0}
+/* games track: keep the cover side alternating by visual order, not DOM order */
+html[data-track="games"] .projects .pcard.only-games{display:grid}
+@media(min-width:821px){
+html[data-track="games"] .projects .pcard.pc-gram,html[data-track="games"] .projects .pcard.pc-calm,html[data-track="games"] .projects .pcard.pc-alibaba{grid-template-columns:1.05fr 1fr}
+html[data-track="games"] .projects .pcard.pc-gram .cover,html[data-track="games"] .projects .pcard.pc-calm .cover,html[data-track="games"] .projects .pcard.pc-alibaba .cover{order:0}
+html[data-track="games"] .projects .pcard.pc-ucl,html[data-track="games"] .projects .pcard.pc-orchard{grid-template-columns:1fr 1.05fr}
+html[data-track="games"] .projects .pcard.pc-ucl .cover,html[data-track="games"] .projects .pcard.pc-orchard .cover{order:2}
+}
+.stack{position:relative}.stack-lab{align-self:center;margin-left:.6rem;font:700 .85rem var(--mono);color:var(--ink)}
+
+/* print: let long sections break across pages; keep cards, rows, figures and table rows whole */
+@media print{
+ article>section,section{break-inside:auto}
+ .jx{border:0!important;background:none!important;padding:0!important;box-shadow:none!important}
+ .jx-note,.jx-all-btn,.jx-tabs,.type-switch{display:none!important}
+ .jx-panel{break-inside:auto;margin:0 0 1.2rem!important;padding:0!important}
+ .jx-panel h4,h2,h3{break-after:avoid}
+ .jx-row,.callout,figure,.fb,.facts-strip div,.quote,.stage-list li,.summary,.xp-row{break-inside:avoid}
+ .tbl-wrap{overflow:visible!important}
+ .tbl{width:100%;font-size:9pt}.tbl tr{break-inside:avoid}.tbl thead{display:table-header-group}
+ .dup{display:none!important}
+ img{max-width:100%;height:auto}
+ .p-hero{padding:1rem 0}
+}
+@media print{.chart,.funnel,.stack,.hb{break-inside:avoid}.xp{display:none!important}}
+@media print{h2,h3,h4{break-inside:avoid;break-after:avoid-page}h2 .n{break-after:avoid-page}}
+@media print{
+ .hero2{min-height:0!important;height:auto!important;padding:1.2rem 0 1rem!important;break-inside:avoid}
+ .hero2 .collage{max-width:300px}
+ .pcard,.mini,.nfeat,.ability,.nvid,.life figure{break-inside:avoid}
+ .vplay,.tracks,.cc,.cue{display:none!important}
+ .pcard{transform:none!important}
+}
+@media print{.cover{min-height:150px!important}.pcard,.pcard:nth-child(even){grid-template-columns:1fr 1.4fr!important}.pcard:nth-child(even) .cover{order:0!important}}
