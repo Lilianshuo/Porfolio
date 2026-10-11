@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html data-mode="final" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Calm by Default — Linshuo Li</title>
+<meta content="Case study: mixed-methods research and prototype on notification-related anxiety." name="description"/>
+<link href="../assets/css/main.css" rel="stylesheet"/>
+<link href="../assets/css/v2.css" rel="stylesheet"/>
+</head>
+<body data-theme="calm">
+<a class="skip" data-zh="跳到正文" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">李霖烁 · Linshuo Li</a>
+<nav aria-label="Main" class="nav" id="nav"><a data-zh="作品" href="../index.html#work">Work</a><a data-zh="更多经历" href="../index.html#more">More work</a><a data-zh="背景" href="../index.html#about">Background</a><a data-zh="联系" href="../index.html#contact">Contact</a></nav>
+<button aria-label="Switch language" class="btn sm" id="langBtn" type="button">EN</button>
+<button aria-controls="nav" aria-expanded="false" class="btn sm menu-btn" data-zh="菜单" type="button">Menu</button>
+</div></header>
+<main id="main">
+<div class="p-hero"><div class="wrap">
+<p class="eyebrow">Case study 01 · Individual MSc project · 12 weeks</p>
+<h1>Calm by Default</h1>
+<p class="positioning" style="margin-bottom:0">Notifications keep students reachable and put them under pressure. Muting everything trades one problem for another, so I researched what students actually need to feel safe not checking, and designed a prototype around it.</p>
+<p style="margin:1.3rem 0 0"><a class="btn solid" data-zh="查看交互原型（Calm Profile V2）↗" href="https://www.figma.com/proto/TapucxikUweoEE3bM08RQc/Calm-Profile--V2?node-id=2176-9092&amp;p=f&amp;t=Z8bU3hxRYRjVyilE-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=2176%3A9092&amp;show-proto-sidebar=1" rel="noopener" target="_blank">View the interactive prototype (Calm Profile V2) ↗</a></p>
+<div class="summary">
+<div><b>Research question</b>How might notification interactions be redesigned to reduce momentary notification-related anxiety while preserving students’ sense of responsiveness and connectedness?</div>
+<div><b>My role</b>Individual MSc design project. I ran the research from literature review and workshops to survey, analysis, prototype and usability test.</div>
+<div><b>Methods and sample</b>Co-design workshops (n=10) · exploratory survey (n=31) · scenario-based usability test (n=6).</div>
+<div><b>Core findings</b>Pressure builds before and after a check, not only at arrival. Messaging is both the most important and a main source of disruption. Users want control without more setup.</div>
+<div><b>Impact on decisions</b>Reframed “block more” as “stay reachable without checking”; set three design principles, a system-level mode (Calm Profile) and three test-driven iterations.</div>
+</div></div></div>
+<div class="wrap layout">
+<nav aria-label="On this page" class="toc"><a href="#context">Why it matters</a><a href="#solution">Calm Profile V2</a><a href="#design">Role and methods</a><a href="#findings">Findings → design</a><a href="#test">Evaluation</a><a href="#limits">Limits and next steps</a></nav>
+<article>
+<p class="deep-ctl"><button class="btn sm" data-expand-all="" data-zh="展开全部细节" type="button">Expand all details</button></p>
+<section id="context"><h2><span class="n">01</span>Why it matters: focus and connection</h2>
+<p class="read">Students need to concentrate, and they also need to stay reachable. Constant cues invite checking and can affect focus (Gómez-Muñoz &amp; Baelo, 2026; Veissière &amp; Stendel, 2018), but muting everything trades one problem for another: more control, less connectedness. The project defines <i>notification-related anxiety</i> as momentary worry, pressure or unease arising from everyday notification interactions (adapted from Alutaybi et al., 2020).</p>
+<div class="callout"><b class="k">Decision this research supports</b><p>What kind of notification intervention is worth designing for students: one that keeps connectedness and responsiveness, balances automation, setup effort and control, and limits checking-triggered phone use while supporting a return to the task.</p></div>
+<details class="deep" open=""><summary>Existing approaches and their trade-offs</summary><p class="read">Before designing, I reviewed existing approaches. Each one solves part of the problem and creates another:</p>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Approach (source)</th><th>Reported benefit</th><th>Reported trade-off</th></tr></thead><tbody>
+<tr><td>Disabling or muting notifications (Dekker et al., 2025)</td><td>Improved perceived control and productivity</td><td>Decreased connectedness, more workload and FOMO, anxiety; more phone pick-ups and longer screen time (Pielot &amp; Rello, 2017; Liao &amp; Sundar, 2022)</td></tr>
+<tr><td>Greyscale display (Holte et al., 2023)</td><td>Reduced anxiety</td><td>Did not significantly change phone pick-ups</td></tr>
+<tr><td>Batching three times a day (Fitz et al., 2019)</td><td>Fewer unlocks, more control</td><td>Essential communication delayed and not contextualised</td></tr>
+<tr><td>Boundary-based notification manager (Gross &amp; Mueller, 2021)</td><td>Separates study and personal spheres</td><td>May not suit students whose study–life boundaries blur</td></tr>
+<tr><td>Sensor-inferred vs customisable DND (Qin et al., 2014; Jarupreechachan et al., 2023)</td><td>Less manual effort, or more control</td><td>Trade-off between automation errors and configuration burden</td></tr>
+</tbody></table></div></details></section>
+<section id="solution"><h2><span class="n">02</span>The result: Calm Profile (V2)</h2>
+<p class="read">The research reframed the goal from “block more” to <b>stay reachable without having to keep checking</b>. Three design principles came out of it, and Calm Profile is the system-level mode built around them.</p>
+<ol class="stage-list"><li><div><b>Low-salience communication by default</b> (based on Calm Technology)<br/><span class="muted small">Reduce unnecessary salience; reassure importance with low-effort appraisal.</span></div></li>
+<li><div><b>Contextual, selective reachability with minimal effort</b><br/><span class="muted small">Low-effort defaults, override and transparency, selective and contextual reachability.</span></div></li>
+<li><div><b>Bounded interaction and supported task resumption</b><br/><span class="muted small">Bounded necessary interactions; support for returning to the task.</span></div></li></ol>
+<p class="read">Calm Profile is a temporary, low-effort, system-level mode that preserves necessary communication while reducing notification salience, onward engagement and return difficulty. It differs from Do Not Disturb by supporting necessary communication without opening the full app. I chose a system-level mode because notifications come from many apps, so a single third-party app would struggle to manage them and would add configuration work.</p>
+<div class="two"><div><ul>
+<li><b>Selective reachability.</b> Suggested allowed apps (from survey data) and contacts and chats (from existing priority choices), always editable. <span class="muted">Responds to findings 2 and 4.</span></li>
+<li><b>Temporary customisation.</b> “Adjust for now” changes apply until the mode is turned off. <span class="muted">Responds to finding 2.</span></li>
+<li><b>Bounded replies and “Review later”.</b> Reply to a priority message in a focused window; save the rest without reply pressure. <span class="muted">Responds to finding 3.</span></li>
+</ul></div><div><p><a class="btn solid" href="https://www.figma.com/proto/TapucxikUweoEE3bM08RQc/Calm-Profile--V2?node-id=2176-9092&amp;p=f&amp;t=Z8bU3hxRYRjVyilE-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=2176%3A9092&amp;show-proto-sidebar=1" rel="noopener" target="_blank">Open the interactive prototype (V2) ↗</a></p><p class="small muted">The prototype is Calm Profile V2, the final version after three test-driven iterations. A possible emergency bypass is only a future consideration and is not part of it.</p></div></div>
+<div class="vids">
+<figure class="vid"><video aria-label="Activation from the Control Center shortcut" controls="" playsinline="" poster="../assets/video/calm/control-center-activation.jpg" preload="none"><source src="../assets/video/calm/control-center-activation.mp4" type="video/mp4"/></video><figcaption>Activation from the Control Center shortcut</figcaption></figure>
+<figure class="vid"><video aria-label="Temporary customisation: “Adjust for now”" controls="" playsinline="" poster="../assets/video/calm/temporary-customisation.jpg" preload="none"><source src="../assets/video/calm/temporary-customisation.mp4" type="video/mp4"/></video><figcaption>Temporary customisation: “Adjust for now”</figcaption></figure>
+<figure class="vid"><video aria-label="Bounded reply window for a priority contact" controls="" playsinline="" poster="../assets/video/calm/reply-window.jpg" preload="none"><source src="../assets/video/calm/reply-window.mp4" type="video/mp4"/></video><figcaption>Bounded reply window for a priority contact</figcaption></figure>
+<figure class="vid"><video aria-label="“Review later” from the home screen" controls="" playsinline="" poster="../assets/video/calm/review-later-home.jpg" preload="none"><source src="../assets/video/calm/review-later-home.mp4" type="video/mp4"/></video><figcaption>“Review later” from the home screen</figcaption></figure>
+</div>
+<p class="small muted">Prototype recordings (Figma). Videos start only when you press play.</p></section>
+<section id="design"><h2><span class="n">03</span>My role, methods and sample</h2>
+<p class="read">Individual MSc project. I ran the research from literature review and workshops to survey, analysis, prototype and usability test. Each method answered a different question, so I used them together rather than as repeated confirmation of the same finding.</p>
+<div class="facts-strip"><div><b>10</b><span>co-design workshop participants</span></div><div><b>31</b><span>exploratory survey respondents</span></div><div><b>6</b><span>usability test participants</span></div></div>
+<div class="two">
+<div><h3>Mine</h3><ul><li>Defined the research question and mixed-method plan</li><li>Ran two co-design workshops and the online survey</li><li>Analysed the data (thematic analysis; COM-B and Behaviour Change Wheel; Fogg model)</li><li>Turned findings into design requirements and principles</li><li>Designed Calm Profile and built the interactive Figma prototype</li><li>Ran the usability test and the iterations that followed</li></ul></div>
+<div><h3>Shared or supported</h3><ul><li>MSc supervision and feedback</li><li>Peers helped pilot-test the study procedure before the usability test</li><li>Workshop and test participants contributed the data</li></ul></div>
+</div>
+<div class="callout"><b class="k">How I treated the evidence</b><p>Samples were small and drawn from students, and the prototype was low-fidelity, so I used the findings as directional input for design rather than as population estimates.</p></div>
+<details class="deep" open=""><summary>Research design in detail: question, method and why</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Stage</th><th>Question</th><th>Method and sample</th><th>Why this method</th></tr></thead><tbody>
+<tr><td>Understand the problem</td><td>Where along the interaction does pressure arise, and what do students want?</td><td>Two co-design workshops, n=10: notification journey mapping, focus-group discussion, concept-card co-design</td><td>Pressure unfolds over a sequence of moments; mapping it with participants showed where, and let them propose responses.</td></tr>
+<tr><td>Explore further evidence</td><td>Do the workshop themes appear in another group of respondents, and how do the variables relate?</td><td>Online survey, n=31 (exploratory)</td><td>A quick, wider look at whether workshop themes recur. Its role is to see whether themes recur, not to estimate for a wider population.</td></tr>
+<tr><td>Translate to design</td><td>What should the intervention do, and what should it avoid?</td><td>Thematic analysis; COM-B with the Behaviour Change Wheel (Michie et al., 2011); Fogg model</td><td>Behavioural frameworks organised mixed-method findings into target behaviour, requirements and principles.</td></tr>
+<tr><td>Evaluate the prototype</td><td>Can people understand, start and control it?</td><td>Scenario-based tasks, interviews and a survey, n=6</td><td>An early check of whether the concept is understandable and controllable, before testing its effects.</td></tr>
+</tbody></table></div><div class="fig-grid">
+<figure class="fig"><button aria-label="Enlarge workshop photo" class="zoom" type="button"><img alt="Workshop room: focus-group prompt on a screen, a journey-map template with coloured notes on the table" loading="lazy" src="../assets/img/calm/workshop-1.webp"/></button><figcaption>Workshop setup: focus-group prompt on screen and a journey-map template with participants’ notes.</figcaption></figure>
+<figure class="fig"><button aria-label="Enlarge workshop photo" class="zoom" type="button"><img alt="Notification Journey Map and concept-card notes on a table" loading="lazy" src="../assets/img/calm/workshop-2.webp"/></button><figcaption>The Notification Journey Map and concept-card notes produced in the workshop.</figcaption></figure>
+</div></details></section>
+<section id="findings"><h2><span class="n">04</span>Key findings and how they shaped the design</h2>
+<p class="read">Mapping the whole journey showed that pressure can arise <i>before</i> checking and continue <i>after</i> the notification is addressed. That is why the design works at system level and across the journey, not only at the moment a notification arrives.</p>
+<div class="jx" data-explorer="Notification journey stages" id="journey-explorer"><h3>Explore the journey stage by stage</h3>
+<p class="jx-note">Choose a stage. Insights are my interpretation; the samples are small and exploratory, and a design response is a design decision, not a measured effect of one feature.</p>
+<div class="jx-slot"></div><section class="jx-panel" data-no="1" data-short="Before" id="jx-1"><h4>Stage 1 · Before the notification</h4><p class="jx-insight">Calm has to be easy to turn on, or setup becomes one more burden.</p>
+<div><div class="jx-row obs"><b>Observation · workshop (n=10)</b><p>Participants were immersed in an activity.</p></div>
+<div class="jx-row mech"><b>Pressure mechanism · my interpretation</b><p>Pressure has not started yet, so effort matters here: if turning on a calm mode needs setup, it adds the management burden people said they did not want (finding 4).</p></div>
+<div class="jx-row evid"><b>Evidence</b><p>Workshop journey maps (stage 1); finding 4 draws on synthesis across workshop and survey data.</p></div></div>
+<div><div class="jx-row resp"><b>Design response · Calm Profile</b><p><b>Low-effort activation.</b> Calm Profile can be started from the Control Center shortcut, with low-effort defaults and minimal configuration.</p><figure class="vid jx-media"><video aria-label="activation from the Control Center shortcut" controls="" playsinline="" poster="../assets/video/calm/control-center-activation.jpg" preload="none"><source src="../assets/video/calm/control-center-activation.mp4" type="video/mp4"/></video><figcaption>Prototype clip: activation from the Control Center shortcut</figcaption></figure></div></div></section>
+<section class="jx-panel" data-no="2" data-short="Arrives" id="jx-2"><h4>Stage 2 · Notification arrives</h4><p class="jx-insight">Cues that stand out pull attention before anyone has chosen to look.</p>
+<div><div class="jx-row obs"><b>Observation · workshop (n=10)</b><p>Salient cues capture attention.</p></div>
+<div class="jx-row mech"><b>Pressure mechanism · my interpretation</b><p>Cues that stand out pull attention and prompt an importance judgement (finding 1).</p></div>
+<div class="jx-row evid"><b>Evidence</b><p>Workshop journey maps (stages 1–3).</p></div></div>
+<div><div class="jx-row resp"><b>Design response · Calm Profile</b><p><b>Low-salience by default.</b> The design principle is low-salience communication, based on Calm Technology; the requirement was to reduce unnecessary notification salience.</p></div></div></section>
+<section class="jx-panel" data-no="3" data-short="Appraisal" id="jx-3"><h4>Stage 3 · Immediate appraisal and feeling</h4><p class="jx-insight">Not knowing whether a message matters is what creates the urge to check.</p>
+<div><div class="jx-row obs"><b>Observation · workshop (n=10)</b><p>“Is this important?” Uncertainty creates checking pressure.</p></div>
+<div class="jx-row mech"><b>Pressure mechanism · my interpretation</b><p>Importance is contextual: staying undisturbed competes with staying reachable, so not knowing whether something matters creates pressure to check (findings 1 and 2).</p></div>
+<div class="jx-row evid"><b>Evidence</b><p>Workshop journey maps and discussion (stage 3). In the exploratory survey (n=31), messaging notifications were rated as both important and distracting.</p></div></div>
+<div><div class="jx-row resp"><b>Design response · Calm Profile</b><p><b>Selective reachability and temporary customisation.</b> Suggested allowed apps (from survey data) and contacts (from existing priority choices), always editable; “Adjust for now” changes apply until the mode is turned off.</p><figure class="vid jx-media"><video aria-label="“Adjust for now”" controls="" playsinline="" poster="../assets/video/calm/temporary-customisation.jpg" preload="none"><source src="../assets/video/calm/temporary-customisation.mp4" type="video/mp4"/></video><figcaption>Prototype clip: “Adjust for now”</figcaption></figure></div></div></section>
+<section class="jx-panel" data-no="4" data-short="Response" id="jx-4"><h4>Stage 4 · Behaviour or response</h4><p class="jx-insight">A necessary check should not become a trip into the whole app.</p>
+<div><div class="jx-row obs"><b>Observation · workshop (n=10)</b><p>A necessary check can open the whole app.</p></div>
+<div class="jx-row mech"><b>Pressure mechanism · my interpretation</b><p>Checking one necessary message can lead into the full app and longer phone use (finding 3).</p></div>
+<div class="jx-row evid"><b>Evidence</b><p>Workshop stages 4–5. In the exploratory survey, 67.7% of the 31 respondents reported often continuing to use the phone longer than intended after checking.</p></div></div>
+<div><div class="jx-row resp"><b>Design response · Calm Profile</b><p><b>Bounded interaction.</b> Reply to a priority message in a focused window instead of opening the full app.</p><figure class="vid jx-media"><video aria-label="bounded reply window for a priority contact" controls="" playsinline="" poster="../assets/video/calm/reply-window.jpg" preload="none"><source src="../assets/video/calm/reply-window.mp4" type="video/mp4"/></video><figcaption>Prototype clip: bounded reply window for a priority contact</figcaption></figure></div></div></section>
+<section class="jx-panel" data-no="5" data-short="After" id="jx-5"><h4>Stage 5 · After-effects</h4><p class="jx-insight">The pressure outlasts the notification: getting back to the task is part of the problem.</p>
+<div><div class="jx-row obs"><b>Observation · workshop (n=10)</b><p>Digital drift and difficulty returning to the task.</p></div>
+<div class="jx-row mech"><b>Pressure mechanism · my interpretation</b><p>Pressure can continue after the notification is dealt with: extended use makes it harder to return to the earlier activity (finding 3).</p></div>
+<div class="jx-row evid"><b>Evidence</b><p>Workshop stages 4–5; the exploratory survey figure below (n=31).</p></div></div>
+<div><div class="jx-row resp"><b>Design response · Calm Profile</b><p><b>“Review later”.</b> Save the rest of the messages without reply pressure, which supports returning to the task.</p><figure class="vid jx-media"><video aria-label="“Review later” from the home screen" controls="" playsinline="" poster="../assets/video/calm/review-later-home.jpg" preload="none"><source src="../assets/video/calm/review-later-home.mp4" type="video/mp4"/></video><figcaption>Prototype clip: “Review later” from the home screen</figcaption></figure></div></div></section>
+</div>
+<h3 style="margin-top:2rem">Four findings that defined the design problem</h3>
+<ol class="stage-list">
+<li><div><b>Salient cues capture attention and prompt an importance judgement.</b><br/><span class="muted small">Evidence: workshop journey maps (stages 1–3).</span></div></li>
+<li><div><b>Importance is contextual: staying undisturbed competes with staying reachable.</b><br/><span class="muted small">Evidence: workshop discussion; in the survey, messaging notifications were rated as both important and distracting.</span></div></li>
+<li><div><b>Checking can extend phone use and block returning to the task.</b><br/><span class="muted small">Evidence: workshop stages 4–5; survey figure below.</span></div></li>
+<li><div><b>People want control, but not an additional management burden.</b><br/><span class="muted small">Evidence: synthesis across workshop and survey data.</span></div></li>
+</ol>
+<div class="chart"><h4>Continuing to use the phone longer than intended</h4><p class="sub">Survey, n=31, exploratory · share of respondents</p><div data-chart="continued"></div></div>
+<p class="small muted">This figure supports finding 3 as a pattern worth designing for. It describes the 31 respondents, and I read it alongside the workshop accounts rather than on its own.</p>
+
+<details class="deep" open=""><summary>Findings → design requirements → principles</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Research insight</th><th>Design requirement</th><th>Design principle</th></tr></thead><tbody>
+<tr><td>Salient cues capture attention</td><td>Reduce unnecessary notification salience</td><td rowspan="2">Low-salience communication by default (based on Calm Technology)</td></tr>
+<tr><td>Importance appraisal is automatic and takes effort; checking pressure and FOMO</td><td>Reassure importance with low-effort appraisal</td></tr>
+<tr><td>Configuration easily becomes a cognitive burden</td><td>Low-effort defaults; minimal configuration</td><td rowspan="3">Contextual and selective reachability with minimal effort</td></tr>
+<tr><td>Users value autonomy</td><td>Override, transparency and control</td></tr>
+<tr><td>Importance is contextual</td><td>Preserve selective, contextual reachability</td></tr>
+<tr><td>Extended phone use is related to difficulty returning</td><td>Bounded necessary interactions; support task resumption</td><td>Bounded interaction and supported task resumption</td></tr>
+</tbody></table></div></details>
+<details class="deep" open=""><summary>Workshop output: the journey map and stage table</summary><figure class="fig"><button aria-label="Enlarge journey map" class="zoom" type="button"><img alt="Notification Journey Map across five stages, with distraction pattern and design opportunity per stage" loading="lazy" src="../assets/img/calm/journey-map.webp"/></button><figcaption><b>Workshop output.</b> The journey map shows five stages and a design opportunity at each; it shows pressure extending beyond the moment of arrival.</figcaption></figure><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Stage</th><th>What participants described</th><th>Design opportunity</th></tr></thead><tbody>
+<tr><td>1 Before the notification</td><td>Immersed in an activity</td><td>Low-effort activation</td></tr>
+<tr><td>2 Notification arrives</td><td>Salient cues capture attention</td><td>Reduce unnecessary salience</td></tr>
+<tr><td>3 Immediate appraisal and feeling</td><td>“Is this important?” Uncertainty creates checking pressure</td><td>Support importance judgement</td></tr>
+<tr><td>4 Behaviour or response</td><td>A necessary check can open the whole app</td><td>Bound necessary checking</td></tr>
+<tr><td>5 After-effects</td><td>Digital drift and difficult return to the task</td><td>Support return to task</td></tr>
+</tbody></table></div></details></section>
+<section id="test"><h2><span class="n">05</span>Prototype evaluation, iterations and results</h2>
+<p class="read">Six participants completed scenario-based tasks, followed by interviews and a survey. The test asked whether people could understand, start and control the mode: the questions a first prototype has to answer before its effect on anxiety or checking can be studied.</p>
+<div class="chart"><h4>Concept understanding</h4><p class="sub">Usability test, n=6</p><div data-chart="dots6"></div></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Usability finding</th><th>What worked</th><th>What did not</th></tr></thead><tbody>
+<tr><td>Learnable through use</td><td>Concept understood through use; 6 of 6 rated concept understanding 4–5</td><td>Onboarding caused initial confusion</td></tr>
+<tr><td>Control vs configuration burden</td><td>Editable defaults reduced effort</td><td>Preferences varied between manual and automated control</td></tr>
+<tr><td>Activation and state clarity</td><td>Post-activation use was generally easy</td><td>Activation and state changes lacked salience</td></tr>
+<tr><td>Bounded communication</td><td>Reduced exposure to unrelated app content</td><td>Context and reply options felt too limited</td></tr>
+<tr><td>Focus vs Calm positioning</td><td>Potential for broader immersive contexts</td><td>Mainly perceived as a study or work tool</td></tr>
+</tbody></table></div>
+<p class="read">Three issues were prioritised for the second version. Each iteration is traced to participant feedback:</p>
+<div class="two" style="align-items:start"><div>
+<h3>1 · Teach through interaction</h3>
+<p class="fb"><b>Feedback:</b> some animations and configuration explanations were unnecessary.</p>
+<p>Version 2 uses an interaction-led onboarding that explains what the mode does, how to adjust it temporarily and what can still notify as usual.</p></div>
+<div class="vids" style="margin:0"><figure class="vid"><video aria-label="Interaction-led onboarding (version 2)" controls="" playsinline="" poster="../assets/video/calm/onboarding.jpg" preload="none"><source src="../assets/video/calm/onboarding.mp4" type="video/mp4"/></video><figcaption>Interaction-led onboarding (version 2)</figcaption></figure></div></div>
+<figure class="fig"><button aria-label="Enlarge: Version 2 onboarding screens" class="zoom" type="button"><img alt="Version 2 onboarding screens" loading="lazy" src="../assets/img/calm/iteration-1-onboarding.webp"/></button><figcaption>Version 2 onboarding screens.</figcaption></figure>
+<div class="two" style="align-items:start"><div>
+<h3>2 · Make activation and saving visible</h3>
+<p class="fb"><b>Feedback:</b> mode switching was not salient, and the saving feedback looked like a button.</p>
+<p>Version 2 gives activation a clearer state, adds a prompt to return to the home screen and shows a distinct “Changes Saved” confirmation.</p></div>
+<div class="vids" style="margin:0"><figure class="vid"><video aria-label="Activation and settings (version 2)" controls="" playsinline="" poster="../assets/video/calm/activation-settings.jpg" preload="none"><source src="../assets/video/calm/activation-settings.mp4" type="video/mp4"/></video><figcaption>Activation and settings (version 2)</figcaption></figure></div></div>
+<figure class="fig"><button aria-label="Enlarge: Version 2 activation and settings screens" class="zoom" type="button"><img alt="Version 2 activation and settings screens" loading="lazy" src="../assets/img/calm/iteration-2-activation.webp"/></button><figcaption>Version 2 activation, settings and save feedback.</figcaption></figure>
+<div class="two" style="align-items:start"><div>
+<h3>3 · Keep message context without opening the app</h3>
+<p class="fb"><b>Feedback:</b> the restricted reply context pushed users to open the full app.</p>
+<p>Version 1 offered “Reply in the App” for multiple messages. Version 2 lets messages unfold in place, so context stays available inside the bounded window.</p></div>
+<div class="vids" style="margin:0"><figure class="vid"><video aria-label="Message unfolds in place (version 2)" controls="" playsinline="" poster="../assets/video/calm/message-unfold.jpg" preload="none"><source src="../assets/video/calm/message-unfold.mp4" type="video/mp4"/></video><figcaption>Message unfolds in place (version 2)</figcaption></figure></div></div>
+<figure class="fig"><button aria-label="Enlarge: Before and after the message-context change" class="zoom" type="button"><img alt="Before and after the message-context change" loading="lazy" src="../assets/img/calm/iteration-3-message-context.webp"/></button><figcaption>Version 1 (left, “Reply in the App”) and version 2 (right, “Unfold” and “Fold”).</figcaption></figure>
+
+</section>
+<section id="limits"><h2><span class="n">06</span>Limits and next steps</h2>
+<div class="callout data"><b class="k">What the test established, and what comes next</b><p>Participants could understand the concept, felt able to control it and could operate the prototype, and their feedback shaped three iterations. Whether Calm Profile reduces notification anxiety or checking, and whether people keep using it, is the question for the next study.</p></div>
+<ul class="read"><li>Samples are small and from students; the survey is exploratory; the prototype is low-fidelity.</li>
+<li>What I would carry forward: interaction mapping should extend beyond the moment of interaction; behavioural frameworks help organise mixed-method findings but must be applied cautiously so they do not flatten qualitative complexity.</li></ul>
+<h3>Next study</h3>
+<p class="read">A higher-fidelity or in-situ comparison, measuring momentary notification pressure, urge to check, time to return to the task, rate of missed important messages and willingness to keep using it; plus device energy and processing measurements.</p>
+<details class="deep" open=""><summary>Product feasibility assessment (design stage)</summary><p class="read">The project ends at a tested prototype. What it gives a product team is a defined concept, a rationale for each design choice and a clear list of open questions.</p>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Area</th><th>Assessment (design stage)</th></tr></thead><tbody>
+<tr><td>Potential benefit</td><td>More accessible notification management that could help users protect their digital calm.</td></tr>
+<tr><td>Risk: reply pressure</td><td>The inbox could itself create reply pressure. Mitigation: a “Review later” function.</td></tr>
+<tr><td>Risk: data and errors</td><td>Uses contact, calendar and notification metadata; risk of false negatives. Mitigation: transparent suggestions, manual overrides and local processing. An emergency bypass for urgent contacts is a future consideration and is not part of the final prototype.</td></tr>
+<tr><td>Feasibility</td><td>No extra hardware. Needs cross-app integration and platform-level permissions. Processing energy use still has to be measured.</td></tr>
+<tr><td>Cost</td><td>Development and maintenance costs have not been quantified.</td></tr>
+</tbody></table></div></details></section>
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<div><b>Linshuo Li · 李霖烁</b><br/><span class="muted small" data-zh="用户研究作品集 · 2026">User research portfolio · 2026</span></div>
+<div class="small"><a href="mailto:lilianzdq888@gmail.com">lilianzdq888@gmail.com</a> · <a href="https://www.linkedin.com/in/lilian-li-856014299/" rel="noopener" target="_blank">LinkedIn</a></div>
+</div></footer>
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/v2.js"></script>
+</body>
+</html>
